@@ -11,7 +11,7 @@ const FormReserve = () => {
   const headerRequest = useSelector((state) => state.user.requestHeader);
   const { selectedMotorcycle } = useSelector((state) => state.motorcycle);
   const dispatch = useDispatch();
-  const { motorcycles } = useSelector((state) => state.motorcycle);
+  const motorcycles = useSelector((state) => state.motorcycle.motorcycles) || [];
   const { postSuccess } = useSelector((state) => state.reserve);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const FormReserve = () => {
 
   const [toPay, setToPay] = useState(0);
   const [timeCheck, setTimeCheck] = useState(false);
-  const [selected, setSelected] = useState(selectedMotorcycle?.id ? selectedMotorcycle : (motorcycles[0] ? motorcycles[0] : ''));
+  const [selected, setSelected] = useState(selectedMotorcycle?.id ? selectedMotorcycle : motorcycles[0]);
   const [valid, setValid] = useState(false);
   const [fulldate, setFullDate] = useState({
     fromDate: null,
