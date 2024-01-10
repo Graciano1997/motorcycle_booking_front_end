@@ -77,10 +77,11 @@ const userSlice = createSlice({
         state.success = false;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
+        console.log('cheguei');
+        state.information = action.payload.message;
         state.isLoading = false;
         if (action.payload?.error) {
           state.error = true;
-          state.information = action.payload.message;
         } else {
           state.success = true;
           state.currentUser = action.payload.user;
