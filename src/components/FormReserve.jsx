@@ -26,7 +26,7 @@ const FormReserve = () => {
 
   const [toPay, setToPay] = useState(0);
   const [timeCheck, setTimeCheck] = useState(false);
-  const [selected, setSelected] = useState(selectedMotorcycle?.id ? selectedMotorcycle : motorcycles[0]);
+  const [selected, setSelected] = useState(selectedMotorcycle?.id ? selectedMotorcycle : (motorcycles[0] ? motorcycles[0] : ''));
   const [valid, setValid] = useState(false);
   const [fulldate, setFullDate] = useState({
     fromDate: null,
