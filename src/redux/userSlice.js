@@ -87,6 +87,8 @@ const userSlice = createSlice({
           state.currentUser = action.payload.user;
           state.information = action.payload.message;
           state.requestHeader = { headers: { Authorization: `Bearer ${action.payload.token}`, 'Content-Type': 'application/json' } };
+          console.log(state.currentUser);
+          console.log(state.requestHeader);
         }
       })
       .addCase(loginUser.pending, (state) => {
