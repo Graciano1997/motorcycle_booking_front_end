@@ -11,7 +11,7 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    admin: administrator,
+    admin: false,
   });
 
   const {
@@ -94,6 +94,7 @@ const Signup = () => {
                 name="admin"
                 id="admin"
                 onChange={() => {
+                  setNewUser({ ...newUser, admin: !administrator });
                   setAdministrator(!administrator);
                 }}
               />
