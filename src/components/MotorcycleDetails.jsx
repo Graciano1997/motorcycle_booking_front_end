@@ -25,7 +25,9 @@ const MotorcycleDetails = () => {
             <div>
               <div className="mainButton flexV">
                 <div className="buttonContainerLeft">
-                  <button type="button">
+                  <button type="button" onClick={() => {
+                    navigate('/motorcycles');
+                  }}>
                     <FontAwesomeIcon
                       icon={faCaretLeft}
                       id="leftIcon"
